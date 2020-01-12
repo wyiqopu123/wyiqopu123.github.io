@@ -7,6 +7,7 @@
 <title>主页</title>
 </head>
 <style>
+
 /*下方这句不动它，翻译开始*/
 
 * {
@@ -23,13 +24,18 @@
 
 body {
 	text-align: center;
-	background-color: #ffffff;
+    background-image:url('-491cd6874cefee4f.gif') !important;
+ /*可换上面的图片地址*/
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+ 	background-color: #ffffff;
+  /*可删上面的固定句语*/
 }
 
 /*翻译
 logo图标样式 
-宽度︰ 128px;
-高度︰ 80px;
+宽度︰ 192px;
+高度︰ 108px;
 最大宽度︰ 250px;
 动画︰ flipInX 4s;
 -webkit 动画︰ flipInX 4s
@@ -37,9 +43,9 @@ logo图标样式
 
 
 img.smaller {
-	width: 96px;
-	height: 96px;
-	max-width: 96px;
+	width: 192px;
+	height: 108px;
+	max-width: 250px;
 	animation: flipInX 4s;
 	-webkit-animation: flipInX 4s
 }
@@ -84,7 +90,7 @@ logo添加文字样式
 	outline: 0;
 	font-size: 18px;
 	color: #426ab3;
-	padding: 0 20px;
+	padding: 0 10px;
 	border-radius: 40px;
 }
 
@@ -179,7 +185,7 @@ span {
 
 #content {
 	width: 100%;
-	text-align: center;
+	text-align:center;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
@@ -190,7 +196,7 @@ span {
 动画︰ fadeInDown 1s;
 位置︰ 相对应;
 显示︰ 显示在内部;
-宽度︰ 75px;
+宽度︰ 60px;
 边境︰ 0;
 */
 
@@ -199,7 +205,7 @@ span {
 	animation: fadeInDown 1s;
 	position: relative;
 	display: inline-block;
-	width: 75px;
+	width: 60px;
 	border: 0;
 }
 
@@ -226,7 +232,7 @@ span {
 颜色: #232323;使用夜间模式时修改为#eee或者#f2eada即可
 高度︰ 1.5em;
 线的高度︰ 1.5em;
-宽度︰ 72px;
+宽度︰ 60px;
 字体大小︰ 0.75em;
 白色空间︰ nowrap;
 溢出︰ 隐藏;
@@ -244,7 +250,7 @@ span {
 	color: #232323;
 	height: 1.5em;
 	line-height: 1.5em;
-	width: 72px;
+	width: 60px;
 	font-size: 0.75em;
 	white-space: nowrap;
 	overflow: hidden;
@@ -389,125 +395,298 @@ span {
 <div id="content">
 <br />
 <div class="search_part">
-<img class="smaller" src="logo/icon.png"></img>
+<img class="smaller" src="google12345.gif"></img>
 </a>
 <br />
 <form href='javascript:void(0);' onsubmit="search();return false;" class="search_bar">
-<input type="submit" id="search_submit" value="" >
-<span><input class="search" type="text" value="" autocomplete="off" id="search_input" ></span>
+<input type="submit" id="search_submit" value="GO" >
+<span><i id="clear" onclick="clear_seach()"></i><div class="si"><input class="search" type="text" value="" onkeyup="get_suggest()" onfocus="get_suggest()" onpaste="get_suggest()" autocomplete="off" id="search_input" placeholder="✎...  简单而不简约～" ></div>
+</span>
+<div id="suggest" style="display:none">
+	<ul id="suglist"></ul>
+	<div class="close" onclick="close_sug()">| 收起</div>
+</div>
 </form>
 </div>
 <br />
-
 <div class="main" >
 
 <div class="box">
-<a href="
-https://www.google.com"></a>
-<p><img class="icon" src="img/google.png" ></p>
+<a href="https://www.google.com"></a>              
+<p><img class="icon" src="google.png" ></p>
 <p class="url">Google</p>
 </div>
 
 <div class="box">
 <a href="https://www.baidu.com"></a>
-<p><img class="icon" src="img/bd.png" ></p>
+<p><img class="icon" src="bd.png" ></p>
 <p class="url">百度</p>
 </div>
 
 <div class="box">
 <a href="https://www.taobao.com"></a>
-<p><img class="icon" src="img/tb.png" ></p>
+<p><img class="icon" src="tb.png" ></p>
 <p class="url">淘宝</p>
 </div>
 
 <div class="box">
+<a href="http://www.tanem.xyz/"></a>
+<p><img class="icon" src="258.jpg" ></p>
+<p class="url">Tanem影视</p>
+</div>
+
+
+<div class="box">
 <a href="http://www.qq.com/"></a>
-<p><img class="icon" src="img/txxw.png" ></p>
+<p><img class="icon" src="txxw.png" ></p>
 <p class="url">腾讯新闻</p>
 </div>
 
 <div class="box">
-<a href="http://www.jd.com/"></a>
-<p><img class="icon" src="img/jd.png" ></p>
-<p class="url">京东</p>
+<a href="http://music.junyuewl.com"></a>
+<p><img class="icon" src="apple_music.png" ></p>
+<p class="url">音乐狂</p>
 </div>
 
 
 <div class="box">
 <a href="https://music.163.com/"></a>
-<p><img class="icon" src="img/wyyyy.png" ></p>
+<p><img class="icon" src="wyyyy.png" ></p>
 <p class="url">网易云</p>
 </div>
 
+
 <div class="box">
 <a href="https://www.zhihu.com/"></a>
-<p><img class="icon" src="img/zh.png" ></p>
+<p><img class="icon" src="zh.png" ></p>
 <p class="url">知乎</p>
 </div>
 
 <div class="box">
-<a href="https://www.tmall.com/"></a>
-<p><img class="icon" src="img/tm.png" ></p>
-<p class="url">天猫</p>
+<a href="https://leftshine.gitee.io/viaindex"></a>
+<p><img class="icon" src="hks.png" ></p>
+<p class="url">主页收集</p>
+</div>
+
+<div class="box">
+<a href="https://www.yikm.net/nes?page=2&tag="></a>
+<p><img class="icon" src="ghjjk.png"></p>
+<p class="url">小霸王</p>
+</div>
+
+<div class="box">
+<a href="https://m.dmzj.com/"></a>
+<p><img class="icon" src="图标_null_V2.7.023.png"></p>
+<p class="url">动漫之家</p>
+</div>
+
+<div class="box">
+<a href="  http://jibulao.com/"></a>
+<p><img class="icon" src="-7f88cca909b5d3d1.gif"></p>
+<p class="url">记不牢导航</p>
+</div>
+
+<div class="box">
+<a href=" https://www.moe123.net/m "></a>
+<p><img class="icon" src="0b6932a90cd29989ea73f81f27d5e2ae.jpg"></p>
+<p class="url">萌导航</p>
+</div>
+
+<div class="box">
+<a href="  http://webstack.cc/cn/index.html"></a>
+<p><img class="icon" src="4.png"></p>
+<p class="url">设计师</p>
+</div>
+
+<div class="box">
+<a href=" https://m.91sotu.com/"></a>
+<p><img class="icon" src="9d9119d8d5ecc8955739f58eabdc414e.png"></p>
+<p class="url">搜图导航</p>
+</div>
+
+<div class="box">
+<a href="http://www.yechuang.top"></a>
+<p><img class="icon" src="7.png"></p>
+<p class="url">野创网导航</p>
+</div>
+
+<div class="box">
+<a href="  http://h.4399.com/wap/?301"></a>
+<p><img class="icon" src="404cf47232d265715b4c4cdaadcd831a.png"></p>
+<p class="url">4399小游戏</p>
+</div>
+
+<div class="box">
+<a href=" http://m.7724.com/ "></a>
+<p><img class="icon" src="d8f1c187a15ef29648b43539f48922b8.png"></p>
+<p class="url">7724小游戏</p>
+</div>
+
+<div class="box">
+<a href="  http://www.7k7k.com"></a>
+<p><img class="icon" src="9.png"></p>
+<p class="url">7K7k小游戏</p>
+</div>
+
+<div class="box">
+<a href="https://how2j.cn/?p=15122"></a>
+<p><img class="icon" src="8.png" ></p>
+<p class="url">How2j学习</p>
 </div>
 
 <div class="box">
 <a href="https://www.coolapk.com/"></a>
-<p><img class="icon" src="img/ka.png" ></p>
+<p><img class="icon" src="91ec5ec045afcc3deb484bd6333c7037.gif" ></p>
 <p class="url">酷安</p>
 </div>
 
 <div class="box">
 <a href="http://bbs.zhiyoo.com/"></a>
-<p><img class="icon" src="img/zy.png" ></p>
+<p><img class="icon" src="zy.png" ></p>
 <p class="url">智友</p>
 </div>
 
 <div class="box">
 <a href="http://www.appchina.com/"></a>
-<p><img class="icon" src="img/yyh.png" ></p>
+<p><img class="icon" src="yyh.png" ></p>
 <p class="url">应用汇</p>
 </div>
 
 <div class="box">
 <a href="https://www.so.com/"></a>
-<p><img class="icon" src="img/360dh.png" ></p>
+<p><img class="icon" src="360dh.png" ></p>
 <p class="url">好搜</p>
 </div>
 
 <div class="box">
 <a href="http://v.qq.com/"></a>
-<p><img class="icon" src="img/txsp.png" ></p>
+<p><img class="icon" src="txsp.png" ></p>
 <p class="url">腾讯</p>
 </div>
 
 <div class="box">
 <a href="http://www.iqiyi.com"></a>
-<p><img class="icon" src="img/aqy.png" ></p>
+<p><img class="icon" src="aqy.png" ></p>
 <p class="url">爱奇艺</p>
 </div>
 
 <div class="box">
 <a href="http://www.youku.com"></a>
-<p><img class="icon" src="img/yksp.png" ></p>
+<p><img class="icon" src="yksp.png" ></p>
 <p class="url">优酷</p>
 </div>
 
 <div class="box">
 <a href="https://tv.sohu.com/"></a>
-<p><img class="icon" src="img/shsp.png" ></p>
+<p><img class="icon" src="shsp.png" ></p>
 <p class="url">搜狐</p>
+</div>
+
+<div class="box">
+<a href="http://m.bilibili.com/index.html"></a>
+<p><img class="icon" src="动漫.png"></p>
+<p class="url">哔哩哔哩</p>
 </div>
 
 
 <div class="box">
-<a href="http://www.tanem.xyz/"></a>
-<p><img class="icon" src="img/shsp.png" ></p>
-<p class="url">tanem</p>
+<a href="https://translate.google.cn/m/translate"></a>
+<p><img class="icon" src="b9ee87771eb75e81dcbce42d2ced43d6.gif"></p>
+<p class="url">翻译</p>
 </div>
 
+<div class="box">
+<a href="https://www.weibo.com"></a>
+<p><img class="icon" src="708c2b7e80e167c1a6cc8c3afbda5e70.png"></p>
+<p class="url">微博</p>
 </div>
+
+
+<div class="box">
+<a href="http://a-1.vip/via/#/home"></a>
+<p><img class="icon" src="7.png"></p>
+<p class="url">Home主页</p>
+</div>
+
+<div class="box">
+<a href="https://dama.lu/"></a>
+<p><img class="icon" src="4.png"></p>
+<p class="url">大马路主页</p>
+</div>
+
+<div class="box">
+<a href="https://jingzhunyun.com/"></a>
+<p><img class="icon" src="6.png"></p>
+<p class="url">精准云工具</p>
+</div>
+
+<div class="box">
+<a href=" http://h5.noear.org/"></a>
+<p><img class="icon" src="H5.png"></p>
+<p class="url">H5主页</p>
+</div>
+
+<div class="box">
+<a href="https://forum.xda-developers.com/mi-5"></a>
+<p><img class="icon" src="5.png"></p>
+<p class="url">XDA</p>
+</div>
+
+<div class="box">
+<a href="https://m.youtube.com"></a>
+<p><img class="icon" src="duck.png"></p>
+<p class="url">Youtube</p>
+</div>
+
+<div class="box">
+<a href="https://tw.torrentkitty.tv/search/"></a>
+<p><img class="icon" src="3.png"></p>
+<p class="url">磁力</p>
+</div>
+
+<div class="box">
+<a href=" https://www.52pojie.cn/"></a>
+<p><img class="icon" src="5d117cbbea56da57ba8593d2eeac9d5e.gif"></p>
+<p class="url">吾爱破解</p>
+</div>
+
+<div class="box">
+<a href="https://www.runoob.com/"></a>
+<p><img class="icon" src="图标_null_V1.0.png"></p>
+<p class="url">菜鸟教程</p>
+</div>
+
+<div class="box">
+<a href="https://m.xinshipu.com/mip/caipu/112408/"></a>
+<p><img class="icon" src="d7bfc429b21e65e510a234e2467f56bd.jpg"></p>
+<p class="url">心食谱</p>
+</div>
+
+<div class="box"> 
+<a href=" https://m.meishichina.com/recipe/"></a>
+<p><img class="icon" src="bad6a96816e9ae82d097d0b92c680268.jpg"></p>
+<p class="url">美食天下</p>
+</div>
+
+<div class="box">
+<a href=" https://m.meishij.net/caipudaquan/"></a>
+<p><img class="icon" src="ba27c662a7a151ed03c0ebc14cd449fe.jpg"></p>
+<p class="url">美食杰</p>
+</div>
+
+<div class="box">
+<a href="https://pan.baidu.com"></a>
+<p><img class="icon" src="bd.png"></p>
+<p class="url">百度云</p>
+</div>
+
+
+     </div>
+     
+ 小汪汪~跟小喵喵~♥的爱情故事
+
 <!--
+
 如若要添加可复制一段
 <div class="box">
 <a href="地址"></a>
@@ -523,14 +702,7 @@ https://www.google.com"></a>
 
 </div>
 
-<script type="text/javascript">
-function search(){
-if(document.getElementById("search_input").value != ""){
-webview.search(document.getElementById("search_input").value);
-document.getElementById("search_input").value = "";
-}
-return false;
-}</script>
+<script type="text/javascript">function search(){if(document.getElementById("search_input").value != ""){window.location.href = "http://quark.sm.cn/s?q=" + document.getElementById("search_input").value;document.getElementById("search_input").value = "";}return false;}</script>
 
 </body>
 </html>
