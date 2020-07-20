@@ -1,64 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charSet="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="Cache-Control" content="no-transform" /> 
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="referrer" content="never">
-    <meta name="renderer" content="webkit" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>快手小姐姐在线播放</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section id="main">
-        <video id="player" src="video.php" controls webkit-playsinline playsinline></video>
-    </section>
-    <section id="buttons">
-        <button id="switch">连续: 开</button>
-        <button id="next">播放下一个</button>
-		<button id="next">xmpan.com</button>
-    </section>
-    <script>
-    (function (window, document) {
-        if (top != self) {
-            window.top.location.replace(self.location.href);
-        }
-        var get = function (id) {
-            return document.getElementById(id);
-        }
-        var bind = function (element, event, callback) {
-            return element.addEventListener(event, callback);
-        }
-        var auto = true;
-        var player = get('player');
-        var randomm = function () {
-            player.src = 'video.php?_t=' + Math.random();
-            player.play();
-        }
-        bind(get('next'), 'click', randomm);
-        bind(player, 'error', function () {
-            randomm();
-        });
-        bind(get('switch'), 'click', function () {
-            auto = !auto;
-            this.innerText = '连续: ' + (auto ? '开' : '关');
-        });
-        bind(player, 'ended', function () {
-            if (auto) randomm();
-        });
-    })(window, document);
-    </script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?a510829ff061af31126b4982eb93d08d";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-	
-</body>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>抖音随机小姐姐 - 黑米娱乐网</title>
+		<meta name=viewport content="width=device-width,anicital-scale=1">
+		<link rel="stylesheet" href="bootstrap.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+  <body>
+		<div class="container-fluid video-box">
+			<div class="container ">
+				<div class="tit-name">
+					<span>欢迎观看：</span>
+					<h1 id="tittext">随机抖音小姐姐（仅支持手机播放）</h1>
+				</div>
+              <iframe align="center" scrolling="no" src="http://dy.yy516100.cn/dy.php" frameborder="0" width="100%" height="470"></iframe>
+			</div><br>
+<a href="javascript:location.reload()"><button  style="background-color: #3376f3;" type="button" class="btn btn-success btn-lg btn-block" onClick="dihejk()">随机个小姐姐</button></a>
+<a href="ks.html"><button  style="background-color: #3376f3;" type="button" class="btn btn-success btn-lg btn-block" onClick="dihejk()">看快手小姐姐（可电脑播放）</button></a>
+<a href="http://dy.yy516100.cn/dy.php"><button  style="background-color: #3376f3;" type="button" class="btn btn-success btn-lg btn-block" onClick="dihejk()">( •̥́ ㉨ •̀ू )嘤嘤嘤~</button></a>
+<br><br><br><br><br>
+		</div>
+  </body>
 </html>
