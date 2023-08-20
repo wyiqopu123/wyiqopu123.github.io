@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="applicable-device" content="pc,mobile">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>随机快手小视频</title>
+<meta name="keywords" content="随机小姐姐视频" />
+<meta name="description" content="随机小视频" />
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<style>
+  body{
+		margin: 0 auto;
+		text-align: center;
+    background-image: url(static/images/bj.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+	}
+	.container {
+	  max-width: 700px;
+	  padding: 5px;
+	  margin: 0 auto;
+	}
+	 .panel-title{color: white;}
+  .elevator_item {
+      position: fixed;
+      right: 0;
+      bottom: 95px;
+      z-index: 11;
+  }
+  .elevator_item .feedback {
+      width: 36px;
+      height: 41px;
+      font-size: 12px;
+      padding: 5px 6px;
+      display: block;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 10px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.35);
+      cursor: pointer;
+  }
+  .graHover {
+      position: relative;
+      overflow: hidden;
+  }
+  .grida{
+    background-image:-webkit-linear-gradient(left,#00f,#6ff 10%,#c0f 20%,#c0c 30%,#ccf 40%,#0ff 50%,#ccf 60%,#c0c 70%,#c0f 80%,#6ff 90%,#00f);
+    text-align:center;
+    font-size:15px;
+    line-height:40px;
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip:text;
+    -webkit-background-size:200% 100%;
+    -webkit-animation:masked-animation 4s linear infinite
+  }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div id="home" class="pfblock-image screen-height">
+      <div class="panel panel-primary" style="margin:1% 1% 1% 1%;background: rgba(255, 251, 251, 0.7);text-align:center;">
+        <div class="panel-heading bk-bg-primary">
+          <h6>
+            <a href="javascript:;">
+              <span class="panel-title">
+                  <h3>随机快手视频</h3>
+              </span>
+            </a>
+          </h6>
+        </div>
+        <div class="col-md-14 column">
+          <div id="kj" class="panel-body">
+            <video id="player" controls autoplay height="550px" width="100%">
+              <source src="" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="col-md-14 column">
+          <div>
+            <div class="panel-body">
+              <a href="javascript:;">
+                <button type="button" class="btn btn-success btn-lg btn-block next">
+                  <span class="glyphicon glyphicon-send"></span> 
+                  随机下一个视频
+                </button>
+              </a>
+              <a href="javascript:;" style="padding:1em">
+                <button type="button" class="btn btn-info btn-lg btn-block" id="switch">
+                  连续: 开
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-14 column">
+        <div class="panel-body">
+          <a target="_blank" href="javascript:;"> 
+            <button type="button" class="btn btn-primary btn-sm">
+              <b>提示;若无视频播放请继续点击 随机下一个视频</b>
+            </button>
+          </a>
+          <a target="_blank" href="javascript:;"> 
+            <button type="button" class="btn btn-primary btn-sm">
+              <b>视频来源全自动采集抖音最新热门视频随机播放</b>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>  
+    <a class="grida">随机抖音视频无水印</a> 
+  </div> 
+
+<br>
+  <div class="elevator_item" id="elevator_item" style="display:block;">
+		<a class="feedback graHover next" style="background-color: #ffd900;color:#383838;" href="javascript:;">下个视频</a>		
+    <a target="_self" class="feedback graHover" style="background-color: #550ae0;color:#fff;" href="https://blog.qqsuu.cn">大米博客</a>    	
+  </div>
+
+<script src="https://cdn.qqsuu.cn/api/js/video.js"></script>
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
